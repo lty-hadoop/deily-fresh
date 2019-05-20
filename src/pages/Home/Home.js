@@ -2,8 +2,9 @@ import React, { Component } from 'react'
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
 class Home extends Component {
-	constructor () {
-		super()
+	constructor (props) {
+		super(props)
+		this.state = {}
 	}
 	render () {
 		return (
@@ -11,13 +12,13 @@ class Home extends Component {
 		      <div>
 		        <ul>
 		          <li>
-		            <Link to="/">HomeView</Link>
+		            <Link to="/">首页</Link>
 		          </li>
 		          <li>
-		            <Link to="/about">About</Link>
+		            <Link to="/about">分类</Link>
 		          </li>
 		          <li>
-		            <Link to="/topic">Topic</Link>
+		            <Link to="/topic">购物车</Link>
 		          </li>
 		        </ul>
 
