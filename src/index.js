@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
+import '../public/assets/iconfont/iconfont.css'
 import Home from './pages/Home/Home';
 import * as serviceWorker from './serviceWorker';
 

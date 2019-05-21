@@ -3,10 +3,10 @@ import { BrowserRouter as Router, Route, Link, NavLink } from "react-router-dom"
 import './Home.scss'
 
 const configNav = [
-  { text: '首页', url: '/' },
-  { text: '分类', url: '/category' },
-  { text: '购物车', url: '/car' },
-  { text: '我的', url: '/mine' }
+  { text: '首页', url: '/', icon: '&#xe655;'},
+  { text: '分类', url: '/category', icon: '&#xe7f9;'},
+  { text: '购物车', url: '/car', icon: '&#xe62d;'},
+  { text: '我的', url: '/mine', icon: '&#xe66e;'}
 ]
 
 class Home extends Component {
@@ -21,7 +21,10 @@ class Home extends Component {
 		        <ul className="tabBar">
 		          	{
 		                configNav.map((item,i) =>
-		                    <li key={i}><NavLink exact to={item.url} activeClassName="active">{item.text}</NavLink></li>
+		                    <li key={i}>
+		                    	<i className="iconfont">{item.icon}</i>
+		                    	<NavLink exact to={item.url} activeClassName="active">{item.text}</NavLink>
+		                    </li>
 		                )
 	            	}
 		        </ul>
