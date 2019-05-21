@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import './Home.scss'
 
 class Home extends Component {
 	constructor (props) {
@@ -10,7 +11,7 @@ class Home extends Component {
 		return (
 		    <Router>
 		      <div>
-		        <ul>
+		        <ul className="tabBar">
 		          <li>
 		            <Link to="/">首页</Link>
 		          </li>
@@ -20,13 +21,18 @@ class Home extends Component {
 		          <li>
 		            <Link to="/topic">购物车</Link>
 		          </li>
+		          <li>
+		            <Link to="/mine">我的</Link>
+		          </li>
 		        </ul>
 
-		        <hr />
+		        <div className="aa">
 
 		        <Route exact path="/" component={HomeView} />
 		        <Route path="/about" component={About} />
 		        <Route path="/topic" component={Topic} />
+		        <Route path="/mine" component={Mine} />
+		        </div>
 		      </div>
 		    </Router>
 		  );
@@ -61,5 +67,12 @@ function Topic() {
   );
 }
 
+function Mine() {
+  return (
+    <div>
+      <h2>我的</h2>
+    </div>
+  );
+}
 
 export default Home;
