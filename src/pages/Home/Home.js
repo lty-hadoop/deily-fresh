@@ -1,6 +1,13 @@
 import React, { Component } from 'react'
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Route, Link, NavLink } from "react-router-dom";
 import './Home.scss'
+
+const configNav = [
+  { text: '首页', url: '/' },
+  { text: '分类', url: '/category' },
+  { text: '购物车', url: '/car' },
+  { text: '我的', url: '/mine' }
+]
 
 class Home extends Component {
 	constructor (props) {
@@ -12,26 +19,18 @@ class Home extends Component {
 		    <Router>
 		      <div>
 		        <ul className="tabBar">
-		          <li>
-		            <Link to="/">首页</Link>
-		          </li>
-		          <li>
-		            <Link to="/about">分类</Link>
-		          </li>
-		          <li>
-		            <Link to="/topic">购物车</Link>
-		          </li>
-		          <li>
-		            <Link to="/mine">我的</Link>
-		          </li>
+		          	{
+		                configNav.map((item,i) =>
+		                    <li key={i}><NavLink to={item.url} activeClassName="active">{item.text}</NavLink></li>
+		                )
+	            	}
 		        </ul>
 
-		        <div className="aa">
-
-		        <Route exact path="/" component={HomeView} />
-		        <Route path="/about" component={About} />
-		        <Route path="/topic" component={Topic} />
-		        <Route path="/mine" component={Mine} />
+		        <div>
+			        <Route exact path="/" component={HomeView} />
+			        <Route path="/category" component={Category} />
+			        <Route path="/car" component={Car} />
+			        <Route path="/mine" component={Mine} />
 		        </div>
 		      </div>
 		    </Router>
@@ -51,18 +50,18 @@ class HomeView extends Component {
   
 }
 
-function About() {
+function Category() {
   return (
     <div>
-      <h2>About</h2>
+      <h2>分类</h2>
     </div>
   );
 }
 
-function Topic() {
+function Car() {
   return (
     <div>
-      <h2>Topic</h2>
+      <h2>购物车</h2>
     </div>
   );
 }
