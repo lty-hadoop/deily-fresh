@@ -1,32 +1,39 @@
 import React, { Component } from 'react'
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Route, NavLink } from "react-router-dom";
+import './Home.scss'
+
+const configNav = [
+  { text: '首页', url: '/', icon: 'iconshouye'},
+  { text: '分类', url: '/category', icon: 'iconleimupinleifenleileibie'},
+  { text: '购物车', url: '/car', icon: 'icongouwuche2'},
+  { text: '我的', url: '/mine', icon: 'iconwode'}
+]
 
 class Home extends Component {
-	constructor (props) {
-		super(props)
+	constructor () {
+		super()
 		this.state = {}
 	}
 	render () {
 		return (
 		    <Router>
 		      <div>
-		        <ul>
-		          <li>
-		            <Link to="/">首页</Link>
-		          </li>
-		          <li>
-		            <Link to="/about">分类</Link>
-		          </li>
-		          <li>
-		            <Link to="/topic">购物车</Link>
-		          </li>
+		        <ul className="tabBar">
+		          	{
+		                configNav.map((item,i) =>
+		                    <li key={i}>		                    	
+		                    	<NavLink exact to={item.url} activeClassName="active"><i className={`icon iconfont ${item.icon}`}></i>{item.text}</NavLink>
+		                    </li>
+		                )
+	            	}
 		        </ul>
 
-		        <hr />
-
-		        <Route exact path="/" component={HomeView} />
-		        <Route path="/about" component={About} />
-		        <Route path="/topic" component={Topic} />
+		        <div>
+			        <Route exact path="/" component={HomeView} />
+			        <Route path="/category" component={Category} />
+			        <Route path="/car" component={Car} />
+			        <Route path="/mine" component={Mine} />
+		        </div>
 		      </div>
 		    </Router>
 		  );
@@ -45,21 +52,28 @@ class HomeView extends Component {
   
 }
 
-function About() {
+function Category() {
   return (
     <div>
-      <h2>About</h2>
+      <h2>分类</h2>
     </div>
   );
 }
 
-function Topic() {
+function Car() {
   return (
     <div>
-      <h2>Topic</h2>
+      <h2>购物车</h2>
     </div>
   );
 }
 
+function Mine() {
+  return (
+    <div>
+      <h2>我的</h2>
+    </div>
+  );
+}
 
 export default Home;
