@@ -1,17 +1,17 @@
 import React, { Component } from 'react'
-import { BrowserRouter as Router, Route, Link, NavLink } from "react-router-dom";
+import { BrowserRouter as Router, Route, NavLink } from "react-router-dom";
 import './Home.scss'
 
 const configNav = [
-  { text: '首页', url: '/', icon: '&#xe655;'},
-  { text: '分类', url: '/category', icon: '&#xe7f9;'},
-  { text: '购物车', url: '/car', icon: '&#xe62d;'},
-  { text: '我的', url: '/mine', icon: '&#xe66e;'}
+  { text: '首页', url: '/', icon: 'iconshouye'},
+  { text: '分类', url: '/category', icon: 'iconleimupinleifenleileibie'},
+  { text: '购物车', url: '/car', icon: 'icongouwuche2'},
+  { text: '我的', url: '/mine', icon: 'iconwode'}
 ]
 
 class Home extends Component {
-	constructor (props) {
-		super(props)
+	constructor () {
+		super()
 		this.state = {}
 	}
 	render () {
@@ -21,9 +21,8 @@ class Home extends Component {
 		        <ul className="tabBar">
 		          	{
 		                configNav.map((item,i) =>
-		                    <li key={i}>
-		                    	<i className="iconfont">{item.icon}</i>
-		                    	<NavLink exact to={item.url} activeClassName="active">{item.text}</NavLink>
+		                    <li key={i}>		                    	
+		                    	<NavLink exact to={item.url} activeClassName="active"><i className={`icon iconfont ${item.icon}`}></i>{item.text}</NavLink>
 		                    </li>
 		                )
 	            	}
