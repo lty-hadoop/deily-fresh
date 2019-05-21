@@ -21,7 +21,7 @@ class Home extends Component {
 		        <ul className="tabBar">
 		          	{
 		                configNav.map((item,i) =>
-		                    <li key={i}><NavLink to={item.url} activeClassName="active">{item.text}</NavLink></li>
+		                    <li key={i}><NavLink exact to={item.url} activeClassName="active">{item.text}</NavLink></li>
 		                )
 	            	}
 		        </ul>
