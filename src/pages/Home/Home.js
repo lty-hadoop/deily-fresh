@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { BrowserRouter as Router, Route, NavLink } from "react-router-dom";
 import './Home.scss'
+import HomeView from '../HomeView/HomeView'		// 首页视图
 
 const configNav = [
   { text: '首页', url: '/', icon: 'iconshouye'},
@@ -21,7 +22,7 @@ class Home extends Component {
 		        <ul className="tabBar">
 		          	{
 		                configNav.map((item,i) =>
-		                    <li key={i}>		                    	
+		                    <li key={i}>
 		                    	<NavLink exact to={item.url} activeClassName="active"><i className={`icon iconfont ${item.icon}`}></i>{item.text}</NavLink>
 		                    </li>
 		                )
@@ -36,17 +37,6 @@ class Home extends Component {
 		        </div>
 		      </div>
 		    </Router>
-		  );
-	}
-  
-}
-
-class HomeView extends Component {
-	render () {
-		return (
-		    <div>
-		      <h2>HomeView</h2>
-		    </div>
 		  );
 	}
   
