@@ -1,7 +1,10 @@
 import React, { Component } from 'react'
-import './HomeView.scss'
+import './index.scss'
 
 const product = [
+    {"id": 34975, "url": require('./images/1.jpg'), "title": "进口香蕉1袋500g起「新人特惠」", "subTitle": "跟鲜花一起运过来的香蕉","price": 6.3, "oldPrice": 12.9},
+    {"id": 34785, "url": require('./images/2.jpg'), "title": "妃子笑荔枝500g「新人特惠」", "subTitle": "妃子笑嘻嘻，吃了好甜蜜","price": 9.9, "oldPrice": 26.9},
+    {"id": 23486, "url": require('./images/3.jpg'), "title": "千禧圣女果1盒500g「新人特惠」", "subTitle": "90斤女孩的饭后小甜点","price": 6.3, "oldPrice": 12.9},
     {"id": 34975, "url": require('./images/1.jpg'), "title": "进口香蕉1袋500g起「新人特惠」", "subTitle": "跟鲜花一起运过来的香蕉","price": 6.3, "oldPrice": 12.9},
     {"id": 34785, "url": require('./images/2.jpg'), "title": "妃子笑荔枝500g「新人特惠」", "subTitle": "妃子笑嘻嘻，吃了好甜蜜","price": 9.9, "oldPrice": 26.9},
     {"id": 23486, "url": require('./images/3.jpg'), "title": "千禧圣女果1盒500g「新人特惠」", "subTitle": "90斤女孩的饭后小甜点","price": 6.3, "oldPrice": 12.9},
@@ -11,13 +14,14 @@ class HomeView extends Component {
     constructor(props) {
         super(props);
         this.state = {  };
+        this.handleSearch = this.handleSearch.bind(this)
     }
 
-    handleSearch = () => {
+    handleSearch () {
         console.log('搜索')
     }
-    toDetail = (data, e) => {
-        console.log(`/product/${data}`)
+    toDetail(data) {
+        // console.log(`/product/${data}`)
         this.props.history.push(`/product/${data}`)
     }
     render() {
