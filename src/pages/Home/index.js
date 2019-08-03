@@ -17,7 +17,6 @@ class Home extends Component {
 		    <HashRouter>
 		      <div>
 		        <Navbar configNav={configNav} />
-
 				
 		        <div>
 			        <Route exact path="/" component={HomeView} />
@@ -25,9 +24,9 @@ class Home extends Component {
 
 		      </div>
 		    </HashRouter>
-		  );
+		  )
 	}
   
 }
 
-export default Home;
+export default Home

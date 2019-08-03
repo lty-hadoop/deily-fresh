@@ -14,8 +14,8 @@ import ListItem from '../../Components/ListItem'
 
 class HomeView extends Component {
     constructor(props) {
-        super(props);
-        this.state = { data: [] };
+        super(props)
+        this.state = { data: [] }
         this.handleSearch = this.handleSearch.bind(this)
         this.handleDetail = this.handleDetail.bind(this)
     }
@@ -60,10 +60,10 @@ class HomeView extends Component {
                     <div className="banner-img"></div>
                     
                     <ListItem handleDetail={this.handleDetail} datas={this.state.data}/>
-                </section>                
+                </section>
             </div>
-        );
+        )
     }
 }
 
-export default HomeView;
+export default HomeView
